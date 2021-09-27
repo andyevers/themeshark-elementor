@@ -1,0 +1,149 @@
+.themeshark-heading{
+    --effect-width: 7px;
+    --effect-color: var( --e-global-color-accent );
+}
+.themeshark-heading-text{
+    margin-top:0px;
+    margin-bottom:0px;
+    padding-top:0px;
+    padding-bottom:0px;
+    transform: translateZ(0)
+}
+
+/*forces background-attachment scroll for browsers not compatible with fixed*/
+.themeshark-heading-text.bg-attachment-default,
+.themeshark-heading-text.bg-attachment-default-fl::first-letter{
+    background-attachment: scroll !important;
+    background-size: cover !important;
+}
+
+.themeshark-heading-text-inner-wrap{
+    display:inline-block;
+}
+
+.themeshark-heading--gradient .themeshark-heading-text{
+    padding: 1em;
+    margin: -1em;
+}
+
+/*------------------------------------*/
+/*------------ BAR EFFECT ------------*/
+/*------------------------------------*/
+
+.themeshark-heading--effect-bar .themeshark-heading{
+    --clip-path-before: polygon(-30% 100%, 130% 100%, 130% -30%, -30% -30%);
+    /* --clip-path-after: polygon(-200px -200px, -200px calc(100% + 200px), calc(100% + 200px) calc(100% + 200px), calc(100% + 200px) -200px); */
+}
+
+@keyframes headingBarText{
+    0% { transform: translateY(100%); }
+    30% { transform: translateY(100%); }
+    70% { transform:translateY(0%); }
+    100% { transform:translateY(0%); }
+}
+
+@keyframes headingBarAfter{
+    0% { left:0%; right:100%; }
+    30% { right:0%; }
+    70% { left:0%; }
+    100% { left:100%; right:0%;}
+}
+
+@keyframes headingBarHeading{
+    0% { clip-path: var(--clip-path-before); }
+    70% { clip-path: var(--clip-path-before); }
+    80% { clip-path: none; }
+    100% { clip-path: none; }
+}
+
+.themeshark-heading--effect-bar .themeshark-heading-text-inner-wrap{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    clip-path: var(--clip-path-before);
+}
+
+.themeshark-heading--effect-bar .themeshark-heading-text-inner-wrap::after{
+    content:"";
+    position: absolute;
+    display:inline-block;
+    height: var(--effect-width);
+    background-color: var(--effect-color);
+    bottom:0px;
+    left:0%;
+    right:100%;
+}
+.themeshark-heading--effect-bar.animated .themeshark-heading-text-inner-wrap{
+    animation: headingBarHeading var(--animation-settings) forwards;
+}
+.themeshark-heading--effect-bar.animated .themeshark-heading-text{
+    animation: headingBarText var(--animation-settings);
+}
+.themeshark-heading--effect-bar.animated .themeshark-heading-text-inner-wrap::after{
+    right:0%;
+    left:100%;
+    animation: headingBarAfter var(--animation-settings);
+    transition: left calc(var(--animation-duration) * .3) calc(var(--animation-duration) * .7), right calc(var(--animation-duration) * .3);
+}
+
+
+/*------------------------------------*/
+/*----------- BLUR EFFECT ------------*/
+/*------------------------------------*/
+
+@keyframes headingBlur{
+    0% { opacity: 0; filter: blur(8px); transform: scale(.9); }
+    70% { filter: blur(0px); transform: scale(1); }
+    100% { opacity: 1; filter: blur(0px); transform: scale(1); }
+}
+
+.themeshark-heading--effect-blur.animated .themeshark-heading {
+    animation: headingBlur var(--animation-settings);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: filter, transform, opacity;
+}
+
+/*------------------------------------*/
+/*----------- MASK EFFECT ------------*/
+/*------------------------------------*/
+
+@keyframes headingMaskText{
+    0% { opacity:0; }
+    45% { opacity:0; }
+    55% { opacity:1; }
+    100% { opacity:1; }
+}
+@keyframes headingMaskBefore{
+    0% { width: 0%; left: 0%;}
+    40% { width: 100%; }
+    60% { left:0%; width:100%; }
+    100% { left:100%; }
+}
+
+.themeshark-heading--effect-mask .themeshark-heading-text-inner-wrap{
+    overflow:hidden;
+    display:inline-block;
+    position:relative;
+    vertical-align:top;
+}
+
+.themeshark-heading--effect-mask .themeshark-heading-text-inner-wrap::before{
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: var(--effect-color);
+	top: 0%;
+	left: 0%;
+	bottom: 0%;
+	width: 0%;
+    z-index:1;
+}
+
+.themeshark-heading--effect-mask.animated .themeshark-heading-text{
+    animation: headingMaskText var(--animation-settings);
+}
+
+.themeshark-heading--effect-mask.animated .themeshark-heading-text-inner-wrap::before {
+    animation: headingMaskBefore var(--animation-settings);
+}

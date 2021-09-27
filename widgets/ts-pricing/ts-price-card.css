@@ -1,0 +1,25 @@
+.themeshark-price-card .elementor-price-table__header{
+    position:relative;
+}
+.themeshark-price-card .elementor-price-table__heading,
+.themeshark-price-card .elementor-price-table__subheading{
+    position:relative;
+    z-index:1;
+}
+
+.themeshark-price-card-header-overlay{
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+}
+
+
+/* HEADER CURVED
+/*----------------------------------------------*/
+.themeshark-price-card-header-curved .elementor-price-table__header,
+.themeshark-price-card-header-curved .themeshark-price-card-header-overlay{
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}

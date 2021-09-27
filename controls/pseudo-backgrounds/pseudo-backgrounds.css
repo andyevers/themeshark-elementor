@@ -1,0 +1,89 @@
+.ts-pseudo-bg-before-on::before,
+.ts-pseudo-bg-after-on::after{
+    /* Used for transform control inside pseudo backgrounds */
+    --translate-x_: 0px;
+    --translate-y_: 0px;
+    --scale-x_: 1;
+    --scale-y_: 1;
+    --skew-x_: 0deg;
+    --skew-y_: 0deg;
+    --rotate_: 0deg;
+    --origin-x_: 50%;
+    --origin-y_: 50%;
+
+    --animation-starting-scale: 0.015;
+
+    content:''; 
+    transform: rotate(var(--rotate_)) translateX(var(--translate-x_)) translateY(var(--translate-y_)) scaleX(var(--scale-x_)) scaleY(var(--scale-y_)) skewX(var(--skew-x_)) skewY(var(--skew-y_));
+    transform-origin: var(--origin-x_) var(--origin-y_) 0px;
+    position: absolute;
+    z-index: 0;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    height: 100%;
+    width: 100%;
+    pointer-events:auto;
+    transition: var(--default-transition);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    animation-duration: inherit;
+    animation-fill-mode: forwards;
+}
+
+.sticky-transform-custom{
+    will-change: transform, background-color;
+}
+
+/* GROW EXPAND TRANSFORM
+/*----------------------------------------------*/
+/* grow expand transform */
+.ts-pseudo-bg-before-on.tsPseudoGrowExpand.animated::before,
+.ts-pseudo-bg-after-on.tsPseudoGrowExpand.animated::after{
+    /* will-change: transform; */
+    animation-name: tsPseudoGrowExpand;
+}
+
+@keyframes tsPseudoGrowExpand {
+    0% {  transform: scaleX(var(--animation-starting-scale)) scaleY(0); }
+    50% { transform: scaleX(var(--animation-starting-scale)) scaleY(1); } 
+}
+
+/* grow expand dimensions */
+.ts-pseudo-bg-before-on.tsPseudoGrowExpandDimensions.animated::before,
+.ts-pseudo-bg-after-on.tsPseudoGrowExpandDimensions.animated::after{
+    /* will-change: width, height; */
+    animation-name: tsPseudoGrowExpandDimensions;
+}
+
+@keyframes tsPseudoGrowExpandDimensions {
+    0% { width: 8px; height:0%; }
+    50% { width: 8px; height:100%; } 
+}
+
+/* CUSTOM TRANSFORM
+/*----------------------------------------------*/
+/* --ts-starting-transform_ var defined in animations.css. */
+/* add __ts_transform__ prefix to require custom animation control */
+
+/* custom transform */
+.ts-pseudo-bg-before-on.__ts_transform__pseudoTransform.animated::before,
+.ts-pseudo-bg-after-on.__ts_transform__pseudoTransform.animated::after{
+    /* will-change: transform; */
+    animation-name: __ts_transform__pseudoTransform;
+}
+
+@keyframes __ts_transform__pseudoTransform{
+    0% { transform: var(--ts-starting-transform_); } }
+
+/* custom transform fade */
+.ts-pseudo-bg-before-on.__ts_transform__pseudoTransformFadeIn.animated::before,
+.ts-pseudo-bg-after-on.__ts_transform__pseudoTransformFadeIn.animated::after{
+    /* will-change: transform; */
+    animation-name: __ts_transform__pseudoTransformFadeIn;
+}
+
+@keyframes __ts_transform__pseudoTransformFadeIn{
+    0% { transform: var(--ts-starting-transform_); opacity: 0; } 
+    100% { opacity: 1; } }

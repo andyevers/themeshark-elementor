@@ -1,0 +1,88 @@
+.wrap * {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.become-contributor h2 {
+    font-size: 40px;
+    margin: 20px;
+}
+
+.header {
+    height: 350px;
+    background-size: cover;
+    background-position: top center;
+}
+
+.contributors {
+
+    --gap: 5px;
+    --rows: 4;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contributor {
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .25);
+    width: calc((100% / var(--rows)) - var(--gap) * 2);
+    margin: var(--gap);
+    border-radius: 50px;
+}
+
+.become-contributor {
+    min-height: 200px;
+    width: 70%;
+    margin: -80px auto 0px auto;
+    border-radius: 20px;
+}
+
+.inner-wrap {
+    background-color: white;
+}
+
+.initials-gravatar {
+    height: 45px;
+    width: 45px;
+    background-color: #c8cdd3;
+    border-radius: 50%;
+}
+
+.initials-gravatar-text {
+    font-size: 24px;
+    color: white;
+}
+
+.become-patreon-btn {
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
+    transition: .35s;
+}
+
+.become-patreon-btn::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: .35s;
+    transform-origin: left;
+    z-index:0;
+}
+
+.become-patreon-btn:hover {
+    color: #141414!important;
+}
+
+.become-patreon-btn:hover::after {
+    transform: scaleX(1);
+}

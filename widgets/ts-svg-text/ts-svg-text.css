@@ -1,0 +1,57 @@
+.themeshark-svg-text{
+    --stroke-before: #000;
+    --stroke-after: #000;
+    --stroke-width-after: 0px;
+    --stroke-width-before: 0px;
+
+    z-index:1;
+    position:relative;
+    overflow: visible;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    stroke-linecap: var(--stroke-linecap);
+}
+
+.draw-svg.animated .themeshark-svg-text path{
+    animation: draw var(--animation-settings) forwards;
+    /* will-change: stroke-opacity, stroke-dashoffset; */
+}
+
+.draw-svg.animated .themeshark-svg-text{
+    animation: fillopacity var(--animation-settings) forwards;
+    /* will-change: fill-opacity, stroke, stroke-width; */
+}
+
+@keyframes draw {
+    0% { stroke-opacity: 0; }
+    8% { stroke-opacity: 1; }
+    60% { stroke-dashoffset: 0;}
+    100% { stroke-dashoffset: 0; stroke-opacity:1;}
+}
+
+@keyframes fillopacity {
+    0% {
+        fill-opacity: 0;
+        stroke: var(--stroke-before);
+        stroke-width: var(--stroke-width-before);
+    }
+
+    75% {
+        fill-opacity: 0;
+        stroke: var(--stroke-before);
+        stroke-width: var(--stroke-width-before);
+    }
+
+    100% {
+        fill-opacity: 1;
+        stroke: var(--stroke-after);
+        stroke-width: var(--stroke-width-after);
+    }
+}
+
+/* for editor */
+.themeshark-svg-text-before-state .themeshark-svg-text{
+    fill-opacity: 0!important;
+    stroke-width: var(--stroke-width-before)!important;
+    stroke: var(--stroke-before)!important;
+} 

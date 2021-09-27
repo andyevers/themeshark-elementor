@@ -1,0 +1,296 @@
+.themeshark-expander{
+    --overlay-top-bottom: 200px;
+    --overlay-left-right: 300px;
+    --slide-content-vertical-offset: 0px;
+    --slide-count: 1;
+    --slide-height: 180vh;
+
+    min-height: 100vh;
+    height: calc(var(--slide-count) * var(--slide-height));
+}
+
+.themeshark-expander-inner{
+    position:sticky;
+    position: -webkit-sticky; 
+    width: 100%;
+    height: 100vh;
+    top:0px;
+}
+
+.themeshark-expander-standard-bg{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+}
+
+
+/* FRAMES */
+.themeshark-expander-frame{
+    position:absolute;
+    background-color:white;
+    z-index:2;
+}
+
+.ts-frame-top,
+.ts-frame-bottom{
+    width: 100%;
+    min-height: 10%;
+}
+
+.ts-frame-left,
+.ts-frame-right{
+    height: 100%;
+    min-width: 10%;
+}
+
+.ts-frame-top{
+    top:0px;
+}
+.ts-frame-right{
+    right:0px;
+}
+.ts-frame-bottom{
+    bottom:0px;
+}
+.ts-frame-left{
+    left:0px;
+}
+
+.themeshark-scrolled .ts-frame-top,
+.themeshark-scrolled .ts-frame-bottom{
+    height:0%!important;
+    min-height: 0%!important;
+}
+
+.themeshark-scrolled .ts-frame-left,
+.themeshark-scrolled .ts-frame-right{
+    width:0%!important;
+    min-width: 0%!important;
+}
+
+
+/* EXPANDER BACKGROUND */
+.ts-expander-slide-bg, /*slide bg*/
+.themeshark-expander-bg-overlay{
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    opacity: 0;
+}
+
+
+
+.themeshark-expander-bg-overlay{
+    background-color:black;
+}
+
+.themeshark-scrolled:not(.editor-hide-slides) .ts-expander-slide-bg.active{
+    opacity:1;
+}
+
+
+/* TITLE */
+.themeshark-expander-title-wrap{
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index:3;
+    height:0px;
+}
+
+.themeshark-expander-title-wrap-inner{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    opacity:1;
+    transform: translateY(0%);
+    margin-top: 20px;
+}
+
+.themeshark-scrolled .themeshark-expander-title-wrap-inner{
+    opacity:0;
+    transform: translateY(-50%);
+}
+
+.themeshark-expander-title, 
+.themeshark-expander-sub-title{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* SLIDES CONTAINER */
+.themeshark-expander-content-wrap{
+    display:flex;
+    height:100%;
+    width:100%;
+    max-width: 800px;
+    padding: 20px;
+    margin:auto;
+    z-index:1;
+    color:white;
+}
+
+.themeshark-expander-content{
+    opacity:0;
+    margin:auto;
+    position:relative;
+    width:100%;
+}
+
+/* SLIDES */
+.themeshark-expander-content-block{
+    opacity:0;
+    position:absolute;
+    width:100%;
+}
+
+/* .ts-expander-slide-bg{} (defined with expander background above)*/
+
+.themeshark-expander-slide-backgrounds{
+    opacity: 0;
+}
+
+.themeshark-scrolled .themeshark-expander-slide-backgrounds{
+    opacity: 1;
+}
+
+.ts-expander-slide-bg-overlay{ /*slide-bg*/
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height: 100%;
+}
+
+.themeshark-expander-slide-heading{
+    margin:0px;
+}
+
+.themeshark-expander-content-block.ts-expander-below{
+    transform: translateY(35vh);
+}
+
+.themeshark-expander-content-block:first-child.ts-expander-below{
+    transform: translateY(0vh);
+}
+
+.themeshark-expander-content-block.ts-expander-above{
+    transform: translateY(-35vh);
+}
+
+.themeshark-expander-content-block:last-child.ts-expander-above{
+    transform: translateY(0vh);
+}
+
+.themeshark-expander-content-block-inner{
+    transform: translateY(calc(-50% + var(--slide-content-vertical-offset)));
+}
+
+.themeshark-scrolled:not(.editor-hide-slides) .themeshark-expander-content{
+    opacity:1;
+}
+
+.themeshark-scrolled:not(.editor-hide-slides) .themeshark-expander-content-block.active{
+    transform: translateY(0px);
+    opacity:1;
+}
+
+/* TRANSITIONS */
+.themeshark-expander{
+    --transition-frames: .8s;
+    --transition-between-slides: .7s;
+    --transition-content: .6s;
+    --transition-delay-content: .8s;
+    --transition-background: 1.2s;
+    --transition-delay-background: .8s;
+}
+
+
+
+/*background*/
+.themeshark-expander-standard-bg{
+    transition: var(--transition-frames);
+}
+.themeshark-expander-bg-overlay{
+    transition: var(--transition-content);
+}
+.themeshark-scrolled .themeshark-expander-bg-overlay{
+    transition: var(--transition-content) var(--transition-delay-background);
+}
+
+/*frames*/
+.themeshark-expander-frame{
+    transition: var(--transition-frames);
+}
+
+
+/*title*/
+.themeshark-expander-title-wrap-inner{
+    transition: .5s .25s;
+}
+
+.themeshark-scrolled .themeshark-expander-title-wrap-inner{
+    transition: .3s
+}
+
+/*slides wrap*/
+.themeshark-expander-content{
+    transition: var(--transition-content);
+}
+.themeshark-scrolled:not(.editor-hide-slides) .themeshark-expander-content{
+    transition: var(--transition-content) var(--transition-delay-content);
+}
+
+/*slides*/
+
+.themeshark-expander-slide-backgrounds{
+    transition: var(--transition-background);
+}
+.themeshark-scrolled .themeshark-expander-slide-backgrounds{
+    transition: var(--transition-background) var(--transition-delay-background);
+}
+.ts-expander-slide-bg{
+    transition: var(--transition-between-slides);
+}
+.themeshark-expander-content-block{
+    transition: var(--transition-between-slides);
+}
+
+
+
+
+/*editor*/
+.editor-hide-slides .ts-expander-slide-bg,
+.editor-hide-slides .themeshark-expander-bg-overlay{
+    transition: 0s;
+}
+
+
+/* PERFORMANCE */
+.ts-expander-slide-bg,
+.themeshark-expander-title-wrap-inner,
+.themeshark-expander-content,
+.themeshark-expander-content-block.ts-expander-below,
+.themeshark-expander-content-block.ts-expander-above,
+.themeshark-expander-content-block{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+.themeshark-expander-slide-backgrounds,
+.themeshark-expander-bg-overlay{
+    will-change: opacity;
+}
+
+.themeshark-expander-standard-bg,
+.themeshark-expander-frame{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+}

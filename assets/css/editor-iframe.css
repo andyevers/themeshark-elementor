@@ -1,0 +1,13 @@
+.elementor-add-new-section .elementor-add-themeshark-template-button {
+    background-color: #1489c5;
+    background-image: url(../images/themeshark-icon-white.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 5px;
+    background-size: 50%;
+}
+
+.elementor-add-new-section .elementor-add-themeshark-template-button i{
+    visibility: hidden;
+}
+

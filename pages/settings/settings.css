@@ -1,0 +1,16 @@
+.form-table .ts-field-tight th,
+.form-table .ts-field-tight td{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.form-table .ts-hide-label-cell th{
+    display:none;
+}
+
+.settings-preload_css tbody{
+    display:block;
+    columns: 2;
+    max-width: 800px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,97 @@
+
+/* TEMPLATES MODAL
+/*----------------------------------------------*/
+
+/* TEMPLATE ITEM */
+.template-item{
+    box-shadow:0 1px 13px 0 rgb(0 0 0 / 30%);
+    background-color:white;
+}
+.template-item, 
+.ts-template-image-wrap { 
+    min-height: 85px; 
+}
+
+.ts-template-preview-link { top: 40%!important; }
+.ts-template-preview-link .ts-template-icon { font-size: 35px; }
+
+/* POPUP HEADER */
+#themeshark-template-popup .dialog-header{
+    display: flex;
+    color: #495157;
+    font-weight: 500;
+    font-size: 15px;
+    padding:0px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+    z-index:1;
+    position:relative;
+}
+
+.themeshark-popup-header > div{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 33.3333%;
+    text-align:center;
+}
+.themeshark-popup-header a,
+.themeshark-popup-header a:hover { 
+    color: #6d7882;
+    cursor: pointer; 
+}
+.themeshark-popup-header .menu-item.active { 
+    border-bottom: 3px solid #0073aa;
+    background-image: linear-gradient(180deg,#f1f3f5,#fff)
+}
+
+.themeshark-popup-header .popup-action{
+    font-size: 18px;
+    color: #a4afb7;
+}
+.themeshark-popup-logo { 
+    width: 170px; 
+}
+.themeshark-popup-header > div:first-child { text-align:left; }
+.themeshark-popup-header > div:last-child  { text-align:right; }
+
+
+/* TEMPLATE CONTENT */
+#themeshark-template-popup .dialog-widget-content{
+    width: 1200px;
+    height: 750px;
+    max-width: 98vw;
+    max-height: 95vh;
+    background-color: #f1f3f5;
+    color: #6d7882;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+#themeshark-template-popup .dialog-message{
+    max-height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+.ts-grid-container { 
+    margin-bottom: 50px; 
+}
+
+/* FILTER MENU */
+.ts-filter-menu{
+    max-width: 700px;
+    margin: 10px auto;
+}
+.ts-filter-menu .filter-item{
+    margin: 4px;
+    border: 1px solid #6d7882;
+    color:#6d7882;
+    border-radius: 3px;
+    padding: 0px 5px;
+    display: inline-block;
+}
+.ts-filter-menu .filter-item:hover { 
+    cursor: pointer; 
+}
+.ts-filter-menu .filter-item.active{
+    background-color: #6d7882;
+    color:white;
+}

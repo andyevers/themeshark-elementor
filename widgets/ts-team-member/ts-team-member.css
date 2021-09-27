@@ -1,0 +1,85 @@
+.themeshark-team-member{
+    --container-padding-top: 0px;
+    --container-padding-right: 0px;
+    --container-padding-bottom: 0px;
+    --container-padding-left: 0px;
+
+    max-width: 100%;
+    overflow:hidden;
+    position:relative;
+
+    padding: var(--container-padding-top) var(--container-padding-right) var(--container-padding-bottom) var(--container-padding-left);
+}
+.themeshark-team-member-content{
+    padding: 20px;
+}
+.themeshark-team-member-image-wrap{
+    overflow:hidden;
+}
+
+.themeshark-team-member-image-wrap img{
+    width: 100%;
+    object-fit: cover;
+}
+.themeshark-team-member-social-wrap{
+    display:flex;
+    width:100%;
+    gap: 0px;
+}
+.themeshark-team-member-image-overlay{
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    z-index:1;
+}
+
+.themeshark-social-icon{
+    overflow:hidden;
+}
+.themeshark-team-member-details{
+    z-index:1;
+}
+
+/* SKIN SLIDE
+/*----------------------------------------------*/
+
+.themeshark-team-member--skin-slide{
+    color:white;
+}
+.themeshark-team-member--skin-slide .themeshark-team-member-details{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+}
+.themeshark-team-member--skin-slide .themeshark-team-member-image-wrap-inner{
+    --scale: 1.3;
+    --translate: 12%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.themeshark-team-member--skin-slide .themeshark-team-member-content[class*="ts-effect--enter-"], 
+.themeshark-team-member--skin-slide .themeshark-team-member-details[class*="ts-effect--enter-"] {
+    --translate: 120%;
+}
+
+.themeshark-team-member--skin-slide .themeshark-team-member-social-wrap.social-icon-wrap-outer{
+    position:absolute;
+    z-index:1;
+    bottom:0px;
+}
+
+/* SKIN SLIDE
+/*--------------------------------------------*/
+
+.themeshark-social-icon{
+    --index: 0;
+}
+
+.themeshark-social-icon, .themeshark-social-icon-inner{
+    --delay-interval: 0ms;
+    --starting-delay: 0ms;
+    transition: var(--transition-duration) calc((var(--delay-interval) * var(--index)) + var(--starting-delay));
+}

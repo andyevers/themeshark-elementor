@@ -1,0 +1,126 @@
+.themeshark-nav-menu--dropdown .elementor-item{
+	transition: .2s;
+}
+
+
+/*-----------------------------*/
+/*------- MOBILE TOGGLE -------*/
+/*-----------------------------*/
+.elementor-widget-ts-nav-menu:not(.elementor-nav-menu--toggle) .elementor-menu-toggle {
+	display: none; 
+}
+
+.elementor-widget-ts-nav-menu .elementor-widget-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column; 
+}
+
+
+.themeshark-nav-menu, .themeshark-menu-toggle{
+	--pointer-transition: .2s;
+	--pointer-size: 15px;
+	--pointer-color: var(--e-global-color-accent);
+	--pointer-weight: 3px;
+	transition: .25s;
+}
+
+/*-----------------------------*/
+/*---- DROPDOWN TRANSITION ----*/
+/*-----------------------------*/
+.themeshark-nav-menu .sub-menu{
+	transform: scaleY(0);
+	transform-origin: 0% 0%;
+	transition: .25s;
+}
+
+.themeshark-nav-menu .sub-menu.dropdown-active{
+	transform: scaleY(1);
+}
+
+/*-----------------------------*/
+/*------ CORNERS POINTER ------*/
+/*-----------------------------*/
+
+.themeshark-nav-menu.e--pointer-ts-corners .elementor-item::before,
+.themeshark-nav-menu.e--pointer-ts-corners .elementor-item::after{
+    content:"";
+    position:absolute;
+    opacity: 0;
+    border: solid var(--pointer-color);
+    background-color:transparent !important;
+    width: var(--pointer-size);
+    height:var(--pointer-size);
+}
+
+.themeshark-nav-menu.e--pointer-ts-corners .elementor-item:hover::before,
+.themeshark-nav-menu.e--pointer-ts-corners .elementor-item:hover::after{
+	width: var(--pointer-size);
+	height:var(--pointer-size);
+	opacity: 1;
+}
+
+.themeshark-nav-menu.e--pointer-ts-corners .elementor-item::before{
+	border-width: var(--pointer-weight) 0px 0px var(--pointer-weight);
+	top: 0px;
+	left:0px;
+}
+
+.themeshark-nav-menu.e--pointer-ts-corners .elementor-item::after{
+	border-width: 0px var(--pointer-weight) var(--pointer-weight) 0px;
+	bottom:0px;
+	right:0px;
+}
+
+/*-----------------------------*/
+/*------ CORNERS EXPAND -------*/
+/*-----------------------------*/
+
+.themeshark-nav-menu.e--pointer-ts-corners.e--animation-expand .elementor-item::before,
+.themeshark-nav-menu.e--pointer-ts-corners.e--animation-expand .elementor-item::after{
+	width: 0px;
+	height: 0px;
+	transition: opacity calc(var(--pointer-transition) * .25) calc(var(--pointer-transition) * .667), width var(--pointer-transition), height var(--pointer-transition);
+}
+
+
+.themeshark-nav-menu.e--pointer-ts-corners.e--animation-expand .elementor-item:hover::before,
+.themeshark-nav-menu.e--pointer-ts-corners.e--animation-expand .elementor-item:hover::after{
+  	width: var(--pointer-size);
+	height:var(--pointer-size);
+	transition: opacity calc(var(--pointer-transition) / 3), width var(--pointer-transition), height var(--pointer-transition);
+}
+
+/*-----------------------------*/
+/*------- CORNERS FADE --------*/
+/*-----------------------------*/
+
+.themeshark-nav-menu.e--pointer-ts-corners.e--animation-fade .elementor-item::before,
+.themeshark-nav-menu.e--pointer-ts-corners.e--animation-fade .elementor-item::after{
+  	transition: calc(var(--pointer-transition) * 1.5);
+}
+
+
+
+
+/*-----------------------------*/
+/*----- UNDERLINE SLIDE -------*/
+/*-----------------------------*/
+.themeshark-nav-menu.e--pointer-underline.e--animation-ts-slide-left .elementor-item::after{
+	transform: scaleX(0);
+	transform-origin: left;
+	opacity:1!important;
+}
+
+.themeshark-nav-menu.e--pointer-underline.e--animation-ts-slide-left .elementor-item:hover::after{
+	transform: scaleX(1);
+}
+
+
+.themeshark-nav-menu .elementor-nav-menu .sub-arrow{
+	padding: 0px 0px 0px 10px;
+}

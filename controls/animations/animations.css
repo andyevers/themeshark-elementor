@@ -1,0 +1,89 @@
+/* removes animation & transition duration when animations are being reset */
+.themeshark-invisible.elementor-invisible,
+.themeshark-invisible.elementor-invisible *:not(.animated){
+    animation-duration: 0s!important;
+    transition-duration: 0s!important;
+}
+
+.themeshark-observed-animation.animated{
+    visibility: visible;
+}
+
+/* CUSTOM WIDGET ANIMATIONS
+/*----------------------------------------------*/
+/* animations added to widgets using Animations::add_controls */
+.themeshark-custom-animation{
+    /* DEFAULTS */
+    --animation-duration: 1.5s;
+    --animation-timing-function: ease;
+    --animation-iteration-count: 1;
+    --animation-direction: normal;
+    --animation-fill-mode: forwards;
+}
+
+.animated.themeshark-custom-animation{
+    animation-duration: var(--animation-duration);
+
+    animation-timing-function: var(--animation-timing-function);
+    animation-iteration-count: var(--animation-iteration-count);
+    animation-direction: var(--animation-direction);
+    /* animation-fill-mode: var(--animation-fill-mode); */
+    /* transition-duration: var(--animation-duration); */
+    --animation-settings: var(--animation-duration) var(--animation-timing-function) var(--animation-iteration-count) var(--animation-direction);
+}
+
+/* ADDITIONAL ANIMATIONS
+/*----------------------------------------------*/
+/* These animations are added to elementor entrance animation dropdown */
+
+/* FADE IN SHORT */
+
+/* [class*='.tsFadeInShort']{ will-change: transform, opacity; } */
+.animated.tsFadeInShortDown{ animation-name: tsFadeInShortDown; }
+.animated.tsFadeInShortLeft{ animation-name: tsFadeInShortLeft; }
+.animated.tsFadeInShortRight{ animation-name: tsFadeInShortRight; }
+.animated.tsFadeInShortUp{ animation-name: tsFadeInShortUp; }
+
+@keyframes tsFadeInShortDown{
+    0% { transform: translateY(-15px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; } }
+@keyframes tsFadeInShortLeft{
+    0% { transform: translateX(15px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; } }
+@keyframes tsFadeInShortRight{
+    0% { transform: translateX(-15px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; } }
+@keyframes tsFadeInShortUp{
+    0% { transform: translateY(15px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; } }
+
+
+/* CUSTOM TRANSFORM */
+[class*="__ts_transform__"]{
+    --ts-translate-x_: 0px;
+    --ts-translate-y_: 0px;
+    --ts-scale-x_: 1;
+    --ts-scale-y_: 1;
+    --ts-skew-x_: 0deg;
+    --ts-skew-y_: 0deg;
+    --ts-rotate_: 0deg;
+    --ts-origin-x_: 50%;
+    --ts-origin-y_: 50%;
+
+    --ts-starting-transform_: rotate(var(--ts-rotate_)) translateX(var(--ts-translate-x_)) translateY(var(--ts-translate-y_)) scaleX(var(--ts-scale-x_)) scaleY(var(--ts-scale-y_)) skewX(var(--ts-skew-x_)) skewY(var(--ts-skew-y_));
+    --ts-ending-transform_: rotate(0deg) translate(0px,0px) scale(1,1) skew(0deg,0deg); 
+}
+
+.animated.__ts_transform__transform{ animation-name: __ts_transform__transform; }
+.animated.__ts_transform__transformFadeIn{ 
+    animation-name: __ts_transform__transformFadeIn; 
+    /* will-change: transform, opacity;  */
+}
+
+@keyframes __ts_transform__transform{
+    0%{ transform: var(--ts-starting-transform_); }
+    100%{ transform: var(--ts-ending-transform_); } }
+
+@keyframes __ts_transform__transformFadeIn{
+    0%{ transform: var(--ts-starting-transform_); opacity:0; }
+    100%{ transform: var(--ts-ending-transform_); opacity:1; } }

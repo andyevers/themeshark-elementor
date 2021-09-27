@@ -1,0 +1,167 @@
+/* SOURCE SANS PRO
+/*----------------------------------------------*/
+@font-face{
+	font-family: 'Source Sans Pro';
+	src: url('source-sans-pro/SourceSansPro-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: block;
+}
+@font-face{
+	font-family: 'Source Sans Pro';
+	src: url('source-sans-pro/SourceSansPro.ttf');
+	font-weight: 500;
+	font-style: normal;
+	font-display: block;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('source-sans-pro/SourceSansPro-SemiBold.ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('source-sans-pro/SourceSansPro-Bold.ttf');
+	font-weight: 900;
+	font-style: normal;
+	font-display: block;
+}
+
+
+/* TS ICON
+/*----------------------------------------------*/
+@font-face {
+	/* Icons created with icomoon */
+	font-family: 'tsicon';
+	src:  url('tsicon/tsicon.eot?dvjbaz');
+	src:  url('tsicon/tsicon.eot?dvjbaz#iefix') format('embedded-opentype'),
+		url('tsicon/tsicon.ttf?dvjbaz') format('truetype'),
+		url('tsicon/tsicon.woff?dvjbaz') format('woff'),
+		url('tsicon/tsicon.svg?dvjbaz#tsicon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="tsicon-"], [class*=" tsicon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'tsicon' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="tsicon-"]::after, [class*=" tsicon-"]::after {
+	content: "";
+	content:"\e900";
+	color:#556068;
+	width: 12px;
+	height: 18px;
+	font-family: "tsicon" !important;
+	opacity: .7;
+	speak: none;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: absolute;
+	top: 6px;
+	right: 8px;
+	color: #566068;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.tsicon-themeshark-logo:before {
+	content: "\e900";
+}
+
+.tsicon-price-card:before {
+	content: "\e901";
+}
+
+.tsicon-contact-form-7:before {
+	content: "\e902";
+}
+
+.tsicon-themeshark-gallery:before {
+	content: "\e903";
+}
+
+.tsicon-sticky-styles-nav:before{
+	content: "\e904";
+}
+.tsicon-sticky-styles-image:before{
+	content: "\e905";
+}
+.tsicon-effects-divider:before{
+	content: "\e906";
+}
+.tsicon-content-image-posts:before{
+	content: "\e907";
+}
+.tsicon-content-image:before{
+	content: "\e908";
+}
+.tsicon-testimonials:before{
+	content: "\e909";
+}
+.tsicon-timeline:before{
+	content: "\e90a";
+}
+.tsicon-expanding-section:before{
+	content: "\e90b";
+}
+.tsicon-team-member:before{
+	content: "\e90c";
+}
+.tsicon-themeshark-posts:before{
+	content: "\e90d";
+}
+.tsicon-lottie-logo:before{
+	content: "\e90e";
+}
+.tsicon-effects-button:before{
+	content: "\e90f";
+}
+.tsicon-effects-heading:before{
+	content: "\e910";
+}
+.tsicon-draw-text:before{
+	content: "\e913";
+}
+
+
+
+
+
+
+
+.themeshark-control-icon .elementor-control-title::after{
+	content:"\e900";
+	font-family:'tsicon';
+	position:relative;
+	right: -5px;
+}
+
+.themeshark-section-icon .elementor-panel-heading-title::after{
+	content: "\e900";
+    font-family: 'tsicon';
+    opacity: .8;
+    float: right;
+    transform: scale(1.3);
+}

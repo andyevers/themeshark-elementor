@@ -1,0 +1,101 @@
+.themeshark-gallery{
+    --columns: 4;
+    --gap: 10px;
+    gap: var(--gap);
+}
+
+.themeshark-gallery a {
+    border: unset;
+}
+.themeshark-gallery-item{
+    overflow: hidden;
+    position: relative;
+    display: block;
+    backface-visibility: hidden;
+}
+.themeshark-gallery-item-image{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    break-inside: avoid;
+}
+.themeshark-gallery-item-overlay,
+.themeshark-gallery-item-content{
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+}
+.themeshark-gallery-item-content{
+    display:flex;
+    opacity:0;
+}
+.themeshark-gallery-item:hover .themeshark-gallery-item-content{
+    opacity:1;
+}
+
+.themeshark-gallery-item-text{
+    margin:auto;
+}
+/*------------------------------------*/
+/*------------ GRID LAYOUT -----------*/
+/*------------------------------------*/
+
+.themeshark-gallery-grid .themeshark-gallery{
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    break-inside:avoid;
+}
+
+/*------------------------------------*/
+/*--------- MASONRY LAYOUT -----------*/
+/*------------------------------------*/
+/* 
+.themeshark-gallery-masonry .themeshark-gallery{
+    transform-style:preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    break-inside:avoid;
+    column-count: var(--columns);
+    transform: translateZ(0);
+}
+.themeshark-gallery-masonry .themeshark-gallery-item{
+    will-change:transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    break-inside: avoid;
+    transform-style:preserve-3d;
+    display:inline-flex;
+    width:100%;
+    margin-bottom: var(--gap);
+    transform: translateZ(0);
+} */
+
+/*------------------------------------*/
+/*-------- JUSTIFIED LAYOUT ----------*/
+/*------------------------------------*/
+.themeshark-gallery-justified .themeshark-gallery{
+    --height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.themeshark-gallery-justified .themeshark-gallery-item{
+    flex-grow: 1;
+    width: calc(var(--height) / var(--ratio));
+}
+
+.themeshark-gallery-justified .themeshark-gallery-item-image{
+    height: var(--height);
+}
+
+/*------------------------------------*/
+/*------- OVERLAY ANIMATIONS ---------*/
+/*------------------------------------*/
+
+.themeshark-gallery-item-image,
+.themeshark-gallery-item-overlay,
+.themeshark-gallery-item-content{
+    transition: .8s;
+}

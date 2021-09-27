@@ -1,0 +1,133 @@
+.themeshark-form {
+	--column-gap: 10px;
+	--row-gap: 10px;
+
+
+	display:flex;
+	flex-wrap:wrap;
+	margin-right: calc(var(--column-gap) / -2);
+	margin-left: calc(var(--column-gap) / -2);
+	margin-top: calc(var(--row-gap) / -2);
+	margin-bottom: calc(var(--row-gap) / -2);
+}
+
+
+
+.themeshark-form .themeshark-field-group{
+	padding-right: calc(var(--column-gap) / 2);
+	padding-left: calc(var(--column-gap) / 2);
+	padding-top: calc(var(--row-gap) / 2);
+	padding-bottom: calc(var(--row-gap) / 2);
+	margin-top:auto;
+}
+
+.themeshark-form .themeshark-field-label{
+	color: var( --e-global-color-text );
+	font-family: var( --e-global-typography-text-font-family ), Sans-serif;
+    font-size: var( --e-global-typography-text-font-size );
+    font-weight: var( --e-global-typography-text-font-weight ); 
+}
+
+.themeshark-form textarea{
+	resize:none;}
+
+
+.themeshark-form input[type='submit']{
+	color: #ffffff;
+	background-color: var(--e-global-color-accent);
+	border:none;
+	transition: .2s;
+	padding-left: 24px;
+	padding-right: 24px;
+	width:auto;
+}
+
+.themeshark-form .themeshark-field-textual{
+	background-color: #fff;
+}
+	
+
+.themeshark-form .wpcf7-form-control:not(.wpcf7-submit){
+	width:100%;}
+
+.themeshark-contact-form-7.ts-cf7-use-default-html .wpcf7-form .wpcf7-form-control{
+	margin-bottom: var(--row-gap); }
+
+.themeshark-form .wpcf7-form-control-wrap{
+	padding:0px!important;}
+
+.themeshark-form .wpcf7-form.init .ajax-loader{
+	display:none; }
+
+.themeshark-form-fields-wrapper{
+    width: 100%;
+}
+.themeshark-cf7-error-notice{
+	text-align:center;
+	color:gray;
+}
+
+/* INPUT SIZES
+/*----------------------------------------------*/
+
+.themeshark-form,
+.themeshark-input-size-sm .themeshark-form-field,
+.themeshark-button-size-sm input[type="submit"],
+.themeshark-button-size-sm button{
+	--default-font-size: 15px;
+	--default-min-height: 40px;
+	--default-padding: 5px 14px;
+	--default-border-radius: 3px;
+}
+
+.themeshark-input-size-xs .themeshark-form-field,
+.themeshark-button-size-xs input[type="submit"],
+.themeshark-button-size-xs button{
+	--default-font-size: 13px;
+	--default-min-height: 33px;
+	--default-padding: 4px 12px;
+	--default-border-radius: 2px;
+}
+
+.themeshark-input-size-md .themeshark-form-field,
+.themeshark-button-size-md input[type="submit"],
+.themeshark-button-size-md button{
+	--default-font-size: 16px; 
+	--default-min-height: 47px; 
+	--default-padding: 6px 16px; 
+	--default-border-radius: 4px;
+}
+
+.themeshark-input-size-md .themeshark-form-field,
+.themeshark-button-size-md input[type="submit"],
+.themeshark-button-size-md button{
+	--default-font-size: 16px; 
+	--default-min-height: 47px; 
+	--default-padding: 6px 16px; 
+	--default-border-radius: 4px;
+}
+.themeshark-input-size-lg .themeshark-form-field,
+.themeshark-button-size-lg input[type="submit"],
+.themeshark-button-size-lg button{
+	--default-font-size: 18px; 
+	--default-min-height: 59px; 
+	--default-padding: 7px 20px; 
+	--default-border-radius: 5px;
+}
+.themeshark-input-size-xl .themeshark-form-field,
+.themeshark-button-size-xl input[type="submit"],
+.themeshark-button-size-xl button{
+	--default-font-size: 20px; 
+	--default-min-height: 72px; 
+	--default-padding: 8px 24px; 
+	--default-border-radius: 6px;
+}
+
+.themeshark-form .themeshark-form-field,
+.themeshark-form input[type="submit"],
+.themeshark-form button{
+	font-size: var(--default-font-size);
+	min-height: var(--default-min-height);
+	padding: var(--default-padding); 
+	border-radius: var(--default-border-radius);
+}

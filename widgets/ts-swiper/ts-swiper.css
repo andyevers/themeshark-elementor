@@ -1,0 +1,34 @@
+.themeshark-swiper-outer-wrap{
+    position:relative;
+    --distance-arrows: 15px;
+    --distance-dots: 0px; }
+.themeshark-swiper .swiper-slide{
+    display:flex; }
+.themeshark-swiper .swiper-slide-inner{
+    margin:auto; 
+    flex-grow: 1; }
+
+.themeshark-swiper-navigation .swiper-pagination{
+    width: 100%; }
+.themeshark-swiper-navigation .swiper-pagination-bullet{
+    margin-left: 5px;
+    margin-right: 5px; }
+
+/* NAV POSITION */
+.themeshark-pagination-position-inside .swiper-pagination{
+    bottom: var(--distance-dots); }
+.themeshark-pagination-position-outside .swiper-pagination{
+    top: calc(100% + var(--distance-dots)); }
+
+.themeshark-arrows-position-inside .elementor-swiper-button-prev{
+    left: var(--distance-arrows); }
+.themeshark-arrows-position-inside .elementor-swiper-button-next{
+    right: var(--distance-arrows); }
+
+.themeshark-arrows-position-outside .elementor-swiper-button-prev{
+    right: calc(100% + var(--distance-arrows));
+    left: auto; }
+.themeshark-arrows-position-outside .elementor-swiper-button-next{
+    left: calc(100% + var(--distance-arrows));
+    right: auto; }
+

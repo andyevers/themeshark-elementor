@@ -1,0 +1,90 @@
+.elementor-element{
+    --default-transition: .3s 0s ease;
+}
+
+.themeshark-no-transition,
+.themeshark-no-transition *{
+    transition: 0s!important;
+    transition-delay:0s!important;
+    animation-duration:0s!important;
+    animation-delay:0s!important;
+}
+/* 
+.elementor-ken-burns{
+    will-change:transform;
+} */
+
+/*-----------------------*/
+/* HOVER EFFECTS         */
+/*-----------------------*/
+
+[class*="ts-effect--"]{
+    transition: var(--default-transition);
+}
+
+/* MOVE */
+.ts-hover-effect [class*="ts-effect--move-"] {
+    --translate: 8%;
+    --scale: 1.2;
+    /* will-change: transform; */
+    transform: translate(0%, 0%) scale(var(--scale)); }
+.ts-hover-effect:hover .ts-effect--move-right{
+    transform: translateX(var(--translate)) scale(var(--scale)); }
+.ts-hover-effect:hover .ts-effect--move-left{
+    transform: translateX(calc(var(--translate) * -1)) scale(var(--scale)); }
+.ts-hover-effect:hover .ts-effect--move-up{
+    transform: translateY(calc(var(--translate) * -1)) scale(var(--scale)); }
+.ts-hover-effect:hover .ts-effect--move-down{
+    transform: translateY(var(--translate)) scale(var(--scale)); }
+
+/* ENTER */
+.ts-hover-effect [class*="ts-effect--enter-"] {
+    --translate: 100%;
+    --scale: 0; 
+    /* will-change: transform;  */
+}
+.ts-hover-effect:hover [class*="ts-effect--enter-"] {
+    transform: translate(0%, 0%) scale(1); }
+.ts-hover-effect .ts-effect--enter-left {
+    transform: translateX(calc(var(--translate) * -1)); }
+.ts-hover-effect .ts-effect--enter-right{
+    transform: translateX(var(--translate)); }
+.ts-hover-effect .ts-effect--enter-top {
+    transform: translateY(calc(var(--translate) * -1)); }
+.ts-hover-effect .ts-effect--enter-bottom{
+    transform: translateY(var(--translate)) } 
+.ts-hover-effect .ts-effect--enter-zoom{
+    transform: translate(0%, 0%) scale(var(--scale)); } 
+
+/* FADE IN */
+.ts-hover-effect [class*="ts-effect--fade-in-"]{
+    --translate: 20%;
+    opacity: 0; 
+    /* will-change: transform, opacity;  */
+}
+.ts-hover-effect:hover [class*="ts-effect--fade-in-"]{
+    opacity: 1; 
+    transform: translate(0%); }
+.ts-hover-effect .ts-effect--fade-in-top{
+    transform: translateY(calc(var(--translate) * -1)); }
+.ts-hover-effect .ts-effect--fade-in-bottom{
+    transform: translateY(var(--translate)); }
+.ts-hover-effect .ts-effect--fade-in-right{
+    transform: translateX(var(--translate)); }
+.ts-hover-effect .ts-effect--fade-in-left{
+    transform: translateX(calc(var(--translate) * -1)); }
+
+/* ZOOM */
+.ts-hover-effect [class*="ts-effect--zoom-"] {
+    --scale: 1.2; 
+    /* will-change: transform;  */
+}
+.ts-hover-effect .ts-effect--zoom-in {
+    transform: scale(1.01); }
+.ts-hover-effect:hover .ts-effect--zoom-in {
+    transform: scale(var(--scale)); }
+.ts-hover-effect .ts-effect--zoom-out{
+    transform: scale(var(--scale)); }
+.ts-hover-effect:hover .ts-effect--zoom-out{
+    transform: scale(1.01); }
+
